@@ -21,10 +21,10 @@ reshuffle()
 	fi
 	
 	echo "Extracting Header"
-	head $1 -n 1 > "header_"$1
+	head -n 1 $1 > "header_"$1
 	
 	echo "Copying data to temp file"
-	tail $1 -n +2 > temp_no_header.csv
+	tail -n +2 $1 > temp_no_header.csv
 	
 	# shuffle the data.  uses the function get_seeded_random to ensure repeatable reordering
 	# especially if the data is contained in multiple files.
